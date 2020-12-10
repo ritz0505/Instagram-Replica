@@ -1,0 +1,51 @@
+<html>
+<head>
+<h2>Welcome </h2>
+<meta charset="utf-8"/>
+</head>
+<script>
+</script>
+<style>
+#review {
+  font-family: Arial;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#review td, #review th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#review tr:nth-child(even){background-color: lightgrey;}
+
+#review tr:hover {background-color: grey;}
+
+#review th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #138D75;
+  color: white;
+}
+
+.background{
+  background-color: #B2BABB;
+}
+</style>
+<body style="background-color:#B2BABB;" align="center">
+  <form>
+    <table align="center" id="review">
+      <tr>
+        <th style="text-align:center">Followers List</th>
+      </tr>
+        {% for i in value %}
+          <tr>
+      <td style="text-align:center">{{i}}</td><br><br/>
+        </tr>
+
+{% endfor %}
+    </table>
+  </form>
+</body>
+</html>

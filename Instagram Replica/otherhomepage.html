@@ -1,0 +1,52 @@
+<html>
+<head>
+<h2>Welcome {{user}}</h2>
+<meta charset="utf-8"/>
+</head>
+<script>
+</script>
+<style>
+  .rounded-borders {
+       height: 300px;
+       width: 400px;
+       border-color: #666 #8ebf42;
+       border-image: none;
+       border-radius: 50px 0 50px 0;
+       border-style: solid;
+       border-width: 20px;
+     }
+
+     .set {
+       display: block;
+       margin: 0 auto;
+       width: 400px;
+       margin-bottom: 20px;
+       border-width: 25px;   border-color:orange;   border-style: solid;
+     }
+
+</style>
+<body style="background-color:#B2BABB;" align="center">
+  <form>
+
+  </form>
+  <form method="get" action="/followUnfollow?button=true&id=follow&result={{result}}">
+    <input type="text" name="result" value="{{result}}">
+    <h3><a href="/showList?button=true&id=followers&result={{result}}">{{followerscount}} Followers</a>
+    <a href="/showFollowingList?button=true&id=following&result={{result}}">{{followingcount}} Following</a></h3>
+    {% if id in val1%}
+    <button type="submit" name="follow" id="follow" value="follow" formaction="/unfolllowClass?button=true&result={{result}}">UnFollow</button>
+    {% else %}
+    <button type="submit" name="follow" id="follow" value="follow" >Follow</button>
+    {% endif %}
+  </form>
+  <form method="post">
+    {% for i in range(0,length)|reverse %}
+    <img src="{{x[i]}}" class="set"><br/><br/>
+    <h3>{{user1}}:{{y[i]}}</h3>
+    posted on:{{z[i]}}<br><br/>
+    <br><br/>
+    <br><br/>
+    {% endfor %}
+  </form>
+</body>
+</html>

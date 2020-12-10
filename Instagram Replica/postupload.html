@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <h2>Post here</h2>
+        <meta charset="utf-8"/>
+    </head>
+    <body align="center" style="background-color:#B2BABB;">
+      <div class="row">
+        <form method="get">
+          <input type="Submit" name="Home" value="Home" id="Home" formaction="/TimeLineClass" style="background-color:lightblue"/>
+          <input type="Submit" name="Profile" value="Profile" id="Profile" formaction="/showImage" style="background-color:lightblue"/>
+          <input type="Submit" name="Search" value="Search" id="Search" formaction="/search" style="background-color:lightblue"/>
+        </form>
+        <form method="post" action="{{upload_url}}" enctype="multipart/form-data" class="col-md-12">
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <!--<label for="post_content">Post</label>-->
+                    <textarea class="form-control" rows="10" col="300" id="post_content" name="post_content" placeholder="write something here..!!" required></textarea>
+                    <br><br/>
+                      <input type="file" name="post_image" accept=".jpg,.png" required>
+                </div>
+                <br/>
+                <div class="form-group col-md-6 text-right">
+                    <input type="Submit" name="submit"/ style="background-color:lightblue">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    </body>
+</html>

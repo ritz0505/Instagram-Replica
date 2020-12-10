@@ -1,0 +1,33 @@
+<html>
+<head>
+<h2>Welcome {{user}}</h2>
+<meta charset="utf-8"/>
+</head>
+<script>
+</script>
+<style>
+  .check{
+    margin-top:10%
+  }
+</style>
+<body style="background-color:#B2BABB;" align="center">
+  <form action="/checking?button=true" method="get" style="align:center">
+    <div align="center" class="check">
+    <input list="data" name="data" placeholder="Search User" required>
+    <datalist id="data">
+      {%for i in result%}
+      <option value="{{i.email_address}}">
+      {% endfor %}
+    </datalist>
+    <input type="submit" value="Search" style="background-color:lightblue">
+    </div>
+    <br/>
+      <button type="reset" value="Reset">Reset</button>
+    <br><br/>
+    </form>
+    <form >
+    <button type="submit" name="back" formaction="/">Back</button>
+
+  </form>
+</body>
+</html>

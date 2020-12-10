@@ -1,0 +1,40 @@
+<html>
+<head>
+<h2>{{user}} Timeline</h2>
+<meta charset="utf-8"/>
+</head>
+<script>
+</script>
+<style>
+  #borderimg1 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 round;
+}
+
+.set {
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+  margin-bottom: 20px;
+  border-width: 25px;   border-color:orange;   border-style: solid;
+}
+</style>
+<body style="background-color:#B2BABB;" align="center">
+  <form>
+    {% if result2 > 50 %}
+      {%for i in range(0,50)%}
+      <img src="{{result1[i]}}" alt=""  class="set">
+      <h3>Caption:{{result3[i]}}</h3>
+      Posted On:{{result4[i]}}<br/><br/>
+      {%endfor%}
+    {% else %}
+      {%for i in range(0,result2)%}
+      <img src="{{result1[i]}}" alt=""  class="set">
+      <h3>Caption:{{result3[i]}}</h3>
+      Posted On:{{result4[i]}}<br/><br/>
+      {%endfor%}
+    {% endif %}
+  </form>
+</body>
+</html>
